@@ -1,0 +1,7 @@
+{
+  "name": "mutexify",
+  "version": "1.0.0",
+  "dependencies": {
+    "mutexify": "^1.4.0"
+  }
+}
