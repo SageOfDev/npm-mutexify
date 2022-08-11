@@ -3,14 +3,16 @@ const lock = mutexify()
 
 let cnt = 0
 
-async function countSeconds(second) {
+async function countSeconds(seconds) {
   const release = await lock()
   setTimeout(() => {
     console.log('cnt:', ++cnt)
     release()
-  }, second * 1000)
+  }, seconds * 1000)
 }
 
 setInterval(async () =>{
   await countSeconds(3)
 }, 500)
+
+Promise.resolve(lock)
